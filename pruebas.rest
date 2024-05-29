@@ -1,0 +1,43 @@
+@PORT = 3000
+
+@HOST = http://localhost:{{PORT}}
+
+###recuperar todos los autores
+GET {{HOST}}/api/autores
+
+###recuperar autor por ID
+GET {{HOST}}/api/autores/11
+
+###crea nuevo autor
+POST {{HOST}}/api/autores
+Content-Type: application/json
+
+{
+	"nombre": "Pedro Pedro Pedro Pedro Pe",
+	"email": "pedro@email.com",
+	"imagen": "imagen.jpg"
+
+}
+
+###recuperar todos los posts
+GET {{HOST}}/api/posts
+
+###recuperar post por ID con datos del autor del post unidos
+GET {{HOST}}/api/posts/3
+
+###crear nuevo post
+POST {{HOST}}/api/posts
+Content-Type: application/json
+
+{
+	"titulo": "post de cocina",
+	"descripcion": "descripcion del post",
+	"fecha_de_creacion": "12-12-24",
+	"categoria": "Cocina",
+	"autores_id_autores": "5"
+}
+
+
+###recuperar todos los posts de un mismo autor por ID
+
+GET {{HOST}}/api/autores/1/posts
